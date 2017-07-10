@@ -1,11 +1,11 @@
 const assert = require('assert');
-const methods = ('../src/array-methods');
+const arrayObj = require('../src/array-methods');
 
 
 
 describe('array methods', () => {
-  it ('does something', () => {
-    const forEachLooped = 
+  it ('does something to each item in an array', () => {
+    const forEachLooped = arrayObj.forEachLoop();
     assert.equal(forEachLooped, []);
 
   });

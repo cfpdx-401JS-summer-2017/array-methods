@@ -1,5 +1,9 @@
 const arrayObj = {};
 
+arrayObj.forEachLoop = (arr, callback) => {
+  return true;
+};
+
 
 
 
