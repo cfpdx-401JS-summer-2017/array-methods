@@ -1,8 +1,14 @@
 const arrayObj = {};
 
 arrayObj.forEachLoop = (arr, callback) => {
-  return true;
+  for(let i=0; i < arr.length; i++){
+    callback(arr[i], i);
+  }
 };
+
+arrayObj.mapArray = (arr, callback) => {
+  
+}
 
 
 
