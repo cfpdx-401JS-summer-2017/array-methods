@@ -7,8 +7,13 @@ arrayObj.forEachLoop = (arr, callback) => {
 };
 
 arrayObj.mapArray = (arr, callback) => {
-  
-}
+  for (let i = 0; i < arr.lenght; i++) {
+    callback(arr[i], i);
+    const newArray = [];
+    newArray[i] = arr[i];
+    return newArray;
+  }
+};
 
 
 
