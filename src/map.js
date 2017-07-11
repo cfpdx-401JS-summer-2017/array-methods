@@ -1,8 +1,9 @@
-function map(array, callback) {
-    const newArray = [];
+function myMap(array, callback) {
     for (let i = 0; i < array.length; i++) {
-        return callback(array[i]);
+        callback(array[i], i);
     }
+    return array;
+
 }
 
-module.exports = map;
+module.exports = myMap;

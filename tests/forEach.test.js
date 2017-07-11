@@ -9,8 +9,12 @@ describe('runs a callback through each item in the array', () => {
             newArray.push({item,index});
         }
 
-        const myTest = forEach(testArray, testCallback);
-        assert.deepEqual(newArray,[{index: 0, item: 1}, {index:1, item:2}, {index:2, item:3}]);
+        forEach(testArray, testCallback);
+        assert.deepEqual(newArray,[
+            {index: 0, item: 1}, 
+            {index:1, item:2}, 
+            {index:2, item:3}
+        ]);
     });
 
 });
