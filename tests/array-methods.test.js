@@ -41,4 +41,36 @@ describe('array library', () => {
     });
     assert.deepEqual(acc, 25);
   });
+  it('finds index of first array item that\'s truthy', () => {
+    const arr = [[1, true, 0],[null, , true, 14],[false, null, undefined], [undefined]];
+    var trueIndex;
+    arrayFunctions.findIndex(arr, (item, idx) => {
+      for (var idx = 0; idx < arr.length; idx++) {
+        if(arr[idx].hasOwnProperty(idx)) {
+        console.log('1: ',idx);
+        return trueIndex = idx;
+        idx++;
+        for (var j = 0; j < arr[idx].length; j++) {
+          console.log('1.5: ', arr[idx][j]);
+          if(arr[idx][j].hasOwnProperty(j)){
+            console.log('2: ',arr[idx][j]);
+            if (arr[idx][j] == true) {
+              return trueIndex = arr[idx][j]+' ['+idx+']['+j+']';
+              // idx++;
+              // console.log(trueIndex);
+            } else {
+              return trueIndex = -1;
+              // idx++;
+              // console.log(trueIndex);
+            }
+          } else {
+            trueIndex = -1;
+          }
+
+        }
+      }
+      }
+    });
+      console.log('final: ',trueIndex);
+  });
 });
