@@ -7,6 +7,6 @@ describe('every function', () => {
         const fn = function(x) {
             return x < 400;
         };
-        assert.equal(false, every(array, fn));
+        assert.equal(every(array, fn), false);
     });
 });

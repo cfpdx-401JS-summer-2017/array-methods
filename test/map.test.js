@@ -7,6 +7,6 @@ describe('map function', () => {
         const fn = function(x) {
             return(x * 2);
         };
-        assert.deepEqual([4,8,12,16], map(array, fn));
+        assert.deepEqual(map(array, fn), [4,8,12,16]);
     });
 });

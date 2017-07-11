@@ -7,6 +7,6 @@ describe('findIndex function', () => {
         const fn = function(x) {
             return x > 9;
         };
-        assert.equal(4, findIndex(array, fn));
+        assert.equal(findIndex(array, fn), 4);
     });
 });

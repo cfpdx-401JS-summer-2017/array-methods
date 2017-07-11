@@ -7,6 +7,6 @@ describe('reduce function', () => {
         const fn = function(x) {
             return Math.round(x);
         };
-        assert.equal(100, reduce(array, fn));
+        assert.equal(reduce(array, fn), 100);
     });
 });

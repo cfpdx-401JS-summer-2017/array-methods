@@ -9,6 +9,6 @@ describe('forEach function', () => {
             results.push(x * 2);
         };
         forEach(array, fn);
-        assert.deepEqual([2,6,10,14], results);
+        assert.deepEqual(results, [2,6,10,14]);
     });
 });

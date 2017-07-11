@@ -9,6 +9,6 @@ describe('filter function', () => {
                 return x;
             }
         };
-        assert.deepEqual([7,9], filter(array, fn));
+        assert.deepEqual(filter(array, fn), [7,9]);
     });
 });
