@@ -12,7 +12,15 @@ describe('arrayMethods', () => {
         assert.deepEqual(results, [1, 2, 5]);
     });
 
-
+    it('map: it takes a callback and applies it to an array, then returns the new array', () => {
+        const testArray = [1,2,5];
+        const results = [];
+        arrayMethods.mapMethod(testArray, (item, i) => { 
+            results[i] = item + 1;
+            console.log(item, i);
+        });
+        assert.deepEqual(results, [2, 3, 6]);
+    });
 
 
 

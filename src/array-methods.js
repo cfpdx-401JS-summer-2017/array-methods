@@ -4,11 +4,13 @@ function forEachMethod(array, callback) {
     }
 }
 
-
+function mapMethod(array, callback) {
+    
+}
 
 module.exports = {
-    forEachMethod
-    // mapMethod,
+    forEachMethod,
+    mapMethod
     // filterMethod,
     // reduceMethod,
     // findIndexMethod,
