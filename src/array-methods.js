@@ -16,9 +16,27 @@ function filter(arr, cb){
   }
 }
 
+function reduce(arr, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    if(arr.hasOwnProperty(i)) {
+      cb(arr[i], i);
+    }
+  }
+}
+
+function findIndex(arr, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    if(arr.hasOwnProperty(i)) {
+      cb(arr[i], i);
+    }
+  }
+}
+
 
 module.exports = {
- forEach,
+  forEach,
   map,
-  filter
-}
+  filter,
+  reduce,
+  findIndex
+};

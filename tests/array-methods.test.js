@@ -24,7 +24,7 @@ describe('array library', () => {
     assert.deepEqual(plusThree, [8, 9, 10, 11]);
   });
   it('creates a new array that contains true/truthy values from initial array', () => {
-    const arr = [1, true, false, 3];
+    const arr = [1, true, false, 3, 0, null];
     var truths = [];
     arrayFunctions.filter(arr, (v, i) => {
       if(arr[i]  == true) {
@@ -32,5 +32,13 @@ describe('array library', () => {
       }
     });
     assert.deepEqual(truths, [1, true]);
+  });
+  it('returns total of valid array values', () => {
+    const arr = [1, 2, 3, , 4, 5,];
+    var acc = 10;
+    arrayFunctions.reduce(arr, (v, i) => {
+      acc = acc + arr[i];
+    });
+    assert.deepEqual(acc, 25);
   });
 });
