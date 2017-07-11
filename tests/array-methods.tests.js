@@ -39,12 +39,16 @@ describe('arrayMethods', () => {
 
     it('findIndex: it returns the index of the first item of an array that returns a truthy value after a callback', () => {
         const testArray = ['hello', 'goodbye', 'surprise'];
-        const result = arrayMethods.findIndexMethod(testArray, (item, i) => {
-            console.log('inside findIndex', item, i);
-            if (item == 'surprise') return i;
+        let index = 0;
+        arrayMethods.findIndexMethod(testArray, (item, i) => {
+            if (item == 'goodbye') {
+                index = i;
+                console.log('inside findIndex', item, i);
+                return true;
+            }
         });
 
-        assert.deepEqual(result, 2);
+        assert.deepEqual(index, 1);
     });
 
 

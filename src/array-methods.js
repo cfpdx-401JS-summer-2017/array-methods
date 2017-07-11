@@ -32,7 +32,9 @@ function reduceMethod(array, callback, initial) {
 }
 
 function findIndexMethod(array, callback) {
-
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i], i) == true) return i;
+    }
 }
 
 module.exports = {
