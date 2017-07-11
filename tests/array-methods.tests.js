@@ -28,15 +28,20 @@ describe('arrayMethods', () => {
         assert.deepEqual(results, ['hello', 'hello']);
     });
 
+    it('reduce: it takes accumulator and current values and performs a callback which returns the accumulated value after each function call', () => {
+        const testArray = [2, 0, 3, 7];
+        let result = arrayMethods.reduceMethod(testArray, (accumulator, item, index) => {
+            console.log('inside reduce', accumulator, item, index);
+            return accumulator + item;
+        }, 0);
+        assert.deepEqual(result, 12);
+    });
 
 
 
 
 
 
-    // it('reduce: it takes accumulator and current values and performs a callback which returns the accumulated value after each function call', () => {
-
-    // });
 
     // it('findIndex: it returns the index of the first item of an array that returns a truthy value after a callback', () => {
 

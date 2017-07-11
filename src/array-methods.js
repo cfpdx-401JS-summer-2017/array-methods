@@ -22,11 +22,21 @@ function filterMethod(array, callback){
     return filteredArray;
 }
 
+function reduceMethod(array, callback, initial) {
+    let accumulator = initial;
+
+    for (let i = 0; i < array.length; i++) {
+        accumulator = callback(accumulator, array[i], i);
+    }
+    return accumulator;
+}
+
+
 module.exports = {
     forEachMethod,
     mapMethod,
-    filterMethod
-    // reduceMethod,
+    filterMethod,
+    reduceMethod
     // findIndexMethod,
     // everyMethod
 };
