@@ -25,5 +25,10 @@ describe('array methods', () => {
     assert.deepEqual(mappedArray, [7,11,16]);
   });
 
-
+  it ('filters through an array and creates a new array with values that are truthy per a callback function', () => {
+    const testArray = [3,5,9,12,14];
+    const filteredArray = arrayObj.filter(testArray, (item, index) => (item % 3) === 0
+    );
+    assert.deepEqual(filteredArray, [3,9,12]);
+  });
 });

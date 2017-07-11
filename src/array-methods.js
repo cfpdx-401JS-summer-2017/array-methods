@@ -14,7 +14,15 @@ arrayObj.map = (arr, callback) => {
   return newArray;
 };
 
-
+arrayObj.filter = (arr, callback) => {
+  const newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i)){
+      newArray.push(arr[i]);
+    } 
+  }
+  return newArray;
+};
 
 
 module.exports = arrayObj;
