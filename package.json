@@ -1,0 +1,23 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "src/array.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshabani/array-methods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jshabani/array-methods/issues"
+  },
+  "homepage": "https://github.com/jshabani/array-methods#readme",
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "mocha": "^3.4.2"
+  }
+}
