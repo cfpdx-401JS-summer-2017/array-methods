@@ -31,12 +31,15 @@ function reduceMethod(array, callback, initial) {
     return accumulator;
 }
 
+function findIndexMethod(array, callback) {
+
+}
 
 module.exports = {
     forEachMethod,
     mapMethod,
     filterMethod,
-    reduceMethod
-    // findIndexMethod,
+    reduceMethod,
+    findIndexMethod
     // everyMethod
 };

@@ -37,15 +37,20 @@ describe('arrayMethods', () => {
         assert.deepEqual(result, 12);
     });
 
+    it('findIndex: it returns the index of the first item of an array that returns a truthy value after a callback', () => {
+        const testArray = ['hello', 'goodbye', 'surprise'];
+        const result = arrayMethods.findIndexMethod(testArray, (item, i) => {
+            console.log('inside findIndex', item, i);
+            if (item == 'surprise') return i;
+        });
+
+        assert.deepEqual(result, 2);
+    });
 
 
 
 
 
-
-    // it('findIndex: it returns the index of the first item of an array that returns a truthy value after a callback', () => {
-
-    // });
 
     // it('every: it takes a callback and returns true if each item of the array returns a truthy value after the callback is applied', () => {
 
