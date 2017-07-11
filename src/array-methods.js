@@ -4,9 +4,8 @@ function forEachMethod(array, callback) {
     }
 }
 
-var mappedArray = [];
-
 function mapMethod(array, callback) {
+    let mappedArray = [];
     for (let i = 0; i < array.length; i++) {
         mappedArray.push(callback(array[i], i));
     }
@@ -14,7 +13,13 @@ function mapMethod(array, callback) {
 }
 
 function filterMethod(array, callback){
-    
+    let filteredArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i]) == true) {
+            filteredArray.push(array[i]);
+        }
+    }
+    return filteredArray;
 }
 
 module.exports = {

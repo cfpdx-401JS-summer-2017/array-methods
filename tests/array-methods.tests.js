@@ -24,14 +24,8 @@ describe('arrayMethods', () => {
 
     it('filter: it creates a new array of each item that has a truthy value after passing a check and returns that new array', () => {
         const testArray = ['hello', 'goodbye', 'hello'];
-        const results = [];
-        arrayMethods.filterMethod(testArray, (item, i) => {
-            if (item === 'hello') results[i] = item;
-            console.log('checking in filter', item, i);
-        });
+        const results = arrayMethods.filterMethod(testArray, (item, i) => item === 'hello');
         assert.deepEqual(results, ['hello', 'hello']);
-
-
     });
 
 
