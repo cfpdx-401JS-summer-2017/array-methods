@@ -7,11 +7,12 @@ methods.push = function(array, item) {
 // for each
 methods.foreach = function(array) {
     const numbers = [];
-    array.forEach(function(x) {
-        if(Number.isInteger(x)) {
-            numbers.push(x);
+    for (var i = 0; i < array.length; i++) {
+        console.log(Number.isInteger(array[i]));
+        if (Number.isInteger(array[i])) {
+            numbers.push(array[i]);
         }
-    });
+    }
     return numbers.length;
 };
 // map
@@ -29,11 +30,17 @@ methods.filter = function(array) {
     return filteredArray.length;
 };
 // reduce
-methods.reduce = function(array) {
-    const total = array.reduce(function(acc, item) {
-        return acc + item;
-    });
-    return total;
-};
+// methods.reduce = function(array) {
+//     const total = array.reduce(function(acc, item) {
+//         return acc + item;
+//     });
+//     return total;
+// };
+// find index
+// methods.reduce = function(array, item) {
+//     return array.findIndex(item); 
+// };
+
+// every
 
 module.exports = methods;

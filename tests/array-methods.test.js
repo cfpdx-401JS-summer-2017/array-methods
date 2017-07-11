@@ -28,9 +28,17 @@ describe('array library', () => {
         assert.equal(index, 2);
     });
     // reduce
-    it('reduces the array and returns sum', () => {
-        const array = [1, 2, 3];
-        const sum = methods.reduce(array);
-        assert.equal(sum, 6);
-    });
+    // it('reduces the array and returns sum', () => {
+    //     const array = [1, 2, 3];
+    //     const sum = methods.reduce(array);
+    //     assert.equal(sum, 6);
+    // });
+    // find index
+    // it('find the value the array and returns the index', () => {
+    //     const array = [1, 2, 3];
+    //     const sum = array.findIndex(array, 2);
+    //     assert.equal(sum, 1);
+    // });
+    // every
+    
 });
