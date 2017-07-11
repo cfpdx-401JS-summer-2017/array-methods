@@ -1,8 +1,9 @@
 function myMap(array, callback) {
+    const newArray = [];
     for (let i = 0; i < array.length; i++) {
-        callback(array[i], i);
+        newArray[i] = callback(array[i]);
     }
-    return array;
+    return newArray;
 
 }
 
