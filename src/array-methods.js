@@ -13,10 +13,14 @@ function mapMethod(array, callback) {
     return mappedArray;
 }
 
+function filterMethod(array, callback){
+    
+}
+
 module.exports = {
     forEachMethod,
-    mapMethod
-    // filterMethod,
+    mapMethod,
+    filterMethod
     // reduceMethod,
     // findIndexMethod,
     // everyMethod

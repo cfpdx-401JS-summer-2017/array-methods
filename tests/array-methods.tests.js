@@ -16,11 +16,22 @@ describe('arrayMethods', () => {
         const testArray = [1,2,5];
         const results = [];
         arrayMethods.mapMethod(testArray, (item, i) => { 
-            // results.push(testArray[i]);
             results[i] = item + 1;
             console.log('checking in map', item, i);
         });
         assert.deepEqual(results, [2, 3, 6]);
+    });
+
+    it('filter: it creates a new array of each item that has a truthy value after passing a check and returns that new array', () => {
+        const testArray = ['hello', 'goodbye', 'hello'];
+        const results = [];
+        arrayMethods.filterMethod(testArray, (item, i) => {
+            if (item === 'hello') results[i] = item;
+            console.log('checking in filter', item, i);
+        });
+        assert.deepEqual(results, ['hello', 'hello']);
+
+
     });
 
 
@@ -28,13 +39,6 @@ describe('arrayMethods', () => {
 
 
 
-
-
-
-
-    // it('filter: it creates a new array of each item that has a truthy value after passing a check and returns that new array', () => {
-
-    // });
 
     // it('reduce: it takes accumulator and current values and performs a callback which returns the accumulated value after each function call', () => {
 
