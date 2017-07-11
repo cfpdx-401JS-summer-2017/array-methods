@@ -6,7 +6,6 @@ describe('arrayMethods', () => {
         const testArray = [1,2,5];
         const results = [];
         arrayMethods.forEachMethod(testArray, (item, i) => { 
-            console.log(item, i);
             results[i] = item;
         });
         assert.deepEqual(results, [1, 2, 5]);
@@ -17,7 +16,6 @@ describe('arrayMethods', () => {
         const results = [];
         arrayMethods.mapMethod(testArray, (item, i) => { 
             results[i] = item + 1;
-            console.log('checking in map', item, i);
         });
         assert.deepEqual(results, [2, 3, 6]);
     });
@@ -31,7 +29,6 @@ describe('arrayMethods', () => {
     it('reduce: it takes accumulator and current values and performs a callback which returns the accumulated value after each function call', () => {
         const testArray = [2, 0, 3, 7];
         let result = arrayMethods.reduceMethod(testArray, (accumulator, item, index) => {
-            console.log('inside reduce', accumulator, item, index);
             return accumulator + item;
         }, 0);
         assert.deepEqual(result, 12);
@@ -43,7 +40,6 @@ describe('arrayMethods', () => {
         arrayMethods.findIndexMethod(testArray, (item, i) => {
             if (item == 'goodbye') {
                 index = i;
-                console.log('inside findIndex', item, i);
                 return true;
             }
         });
@@ -52,17 +48,11 @@ describe('arrayMethods', () => {
     });
 
     it('every: it takes a callback and returns true if each item of the array returns a truthy value after the callback is applied', () => {
-        const testArray = [3,4,1];
-        let isTruthy = false;
-
-        arrayMethods.everyMethod(testArray, (item, i) => {
-            if (item < 5) {
-                console.log('inside everyMethod', item, i);
-                isTruthy = true;
-            }
-            return isTruthy;
+        const testArray = [3,2, 0, 5,1];
+        let everyTest = arrayMethods.everyMethod(testArray, (item, i) => {
+            if (item < 5) return true;
         });
 
-        assert.deepEqual(isTruthy, true);
+        assert.deepEqual(everyTest, false);
     });
 });

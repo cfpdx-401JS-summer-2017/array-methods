@@ -38,7 +38,15 @@ function findIndexMethod(array, callback) {
 }
 
 function everyMethod(array, callback) {
-    
+    let truthCheck = true;
+
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i], i) !== true) {
+            truthCheck = false;
+            break;
+        }
+    }
+    return truthCheck;
 }
 
 module.exports = {
