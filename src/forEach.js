@@ -1,8 +1,7 @@
 function forEach(array, callback) {
     for(let i = 0; i < array.length; i++){
-        callback(array[i]);
+        callback(array[i], i);
     }
-    return undefined;
 }
 
 module.exports = forEach;
