@@ -1,0 +1,24 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/array-methods.js",
+  "scripts": {
+    "test": "mocha tests",
+    "start" : "npm test -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbeck32/array-methods.git"
+  },
+  "author": "Wendy Beck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbeck32/array-methods/issues"
+  },
+  "homepage": "https://github.com/wbeck32/array-methods#readme",
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "mocha": "^3.4.2"
+  }
+}
