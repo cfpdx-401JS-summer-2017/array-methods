@@ -37,11 +37,15 @@ function findIndexMethod(array, callback) {
     }
 }
 
+function everyMethod(array, callback) {
+    
+}
+
 module.exports = {
     forEachMethod,
     mapMethod,
     filterMethod,
     reduceMethod,
-    findIndexMethod
-    // everyMethod
+    findIndexMethod,
+    everyMethod
 };

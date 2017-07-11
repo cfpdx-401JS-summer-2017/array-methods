@@ -51,14 +51,18 @@ describe('arrayMethods', () => {
         assert.deepEqual(index, 1);
     });
 
+    it('every: it takes a callback and returns true if each item of the array returns a truthy value after the callback is applied', () => {
+        const testArray = [3,4,1];
+        let isTruthy = false;
 
+        arrayMethods.everyMethod(testArray, (item, i) => {
+            if (item < 5) {
+                console.log('inside everyMethod', item, i);
+                isTruthy = true;
+            }
+            return isTruthy;
+        });
 
-
-
-
-    // it('every: it takes a callback and returns true if each item of the array returns a truthy value after the callback is applied', () => {
-
-    // });
-
-
+        assert.deepEqual(isTruthy, true);
+    });
 });
