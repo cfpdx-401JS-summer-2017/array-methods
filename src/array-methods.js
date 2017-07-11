@@ -24,6 +24,6 @@ arrayObj.filter = (arr, callback) => {
   return newArray;
 };
 
-
+arrayObj.reduce = () =>{};
 
 module.exports = arrayObj;
