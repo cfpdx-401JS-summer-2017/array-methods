@@ -16,8 +16,9 @@ describe('arrayMethods', () => {
         const testArray = [1,2,5];
         const results = [];
         arrayMethods.mapMethod(testArray, (item, i) => { 
+            // results.push(testArray[i]);
             results[i] = item + 1;
-            console.log(item, i);
+            console.log('checking in map', item, i);
         });
         assert.deepEqual(results, [2, 3, 6]);
     });
