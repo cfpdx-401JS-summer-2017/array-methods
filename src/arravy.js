@@ -7,18 +7,16 @@ function push(array, item) {
 function forEach(array, callback) {
   for (i = 0; i < array.length; i++) {
       callback(array[i], i);
-
   }
 };
-console.log(forEach());
 
 function map(array, callback) {
+  newArray = array
   for (i = 0; i < array.length; i++) {
-    callback(array)
+    callback(array[i],i);
   }
-  array[array.length] = item;
 
-  return ;
+
 };
 // function filter(array, callback) {
 //   array[array.length] = item;

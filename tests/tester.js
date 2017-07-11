@@ -24,12 +24,17 @@ describe('forEach', () =>  {
     });
 });
 
-describe('map(array, callback)', () =>  {
+describe('map', () =>  {
     it('iterates though an array and builds off of it forming a new one', () => {
         const array = [1, 2, 3];
-        const length = arravy.push(array, 4);
-        assert.equal(length, 4);
-        assert.equal(array[3], 4);
+        const length = arravy.map(array, function(int,index) {
+            multiplyer = int * 2;
+            newArray[index] = multiplyer
+
+
+        });
+        assert.deepEqual(newArray,[2,4,6]);
+
     });
 });
 
