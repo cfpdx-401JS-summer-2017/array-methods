@@ -4,8 +4,15 @@ function forEach(array, callback) {
     }
 }
 
-
+function map(array, callback) {
+    var second = [];
+    for (var i = 0; i < array.length; i++) {
+        second.push(callback(array[i], i));
+    }
+    return second;
+}
 
 module.exports = {
-    forEach
+    forEach,
+    map
 };
