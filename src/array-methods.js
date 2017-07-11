@@ -28,5 +28,12 @@ methods.filter = function(array) {
     });
     return filteredArray.length;
 };
+// reduce
+methods.reduce = function(array) {
+    const total = array.reduce(function(acc, item) {
+        return acc + item;
+    });
+    return total;
+};
 
 module.exports = methods;

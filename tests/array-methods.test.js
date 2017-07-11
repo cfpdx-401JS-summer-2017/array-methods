@@ -27,5 +27,10 @@ describe('array library', () => {
         const index = methods.filter(array);
         assert.equal(index, 2);
     });
-    
+    // reduce
+    it('reduces the array and returns sum', () => {
+        const array = [1, 2, 3];
+        const sum = methods.reduce(array);
+        assert.equal(sum, 6);
+    });
 });
