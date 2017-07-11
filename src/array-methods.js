@@ -4,7 +4,21 @@ function forEach(arr, cb) {
   }
 }
 
+function map(arr, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    cb(arr[i], i);
+  }
+}
+
+function filter(arr, cb){
+  for (var i = 0; i < arr.length; i++) {
+    cb(arr[i], i);
+  }
+}
+
 
 module.exports = {
- forEach
+ forEach,
+  map,
+  filter
 }
