@@ -1,7 +1,7 @@
 function myFilter(array,callback) {
     const newArray = [];
     for(let i = 0; i < array.length; i++) {
-        //filter array if it passes test?
+        newArray[i] = callback(array[i]);
     }
     return newArray;
 }
