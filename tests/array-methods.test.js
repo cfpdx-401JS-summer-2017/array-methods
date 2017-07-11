@@ -42,34 +42,24 @@ describe('array library', () => {
     assert.deepEqual(acc, 25);
   });
   it('finds index of first array item that\'s truthy', () => {
-      const arr = [[1, true, 0],[null, , true, 14],[false, null, undefined], [undefined]];
-      var trueIndex = [];
-      arrayFunctions.findIndex(arr, (item, idx) => {
-        for (var idx = 0; idx < arr.length; idx++) {
-          console.log('line 50: ',arr[idx]);
+    const arr = [[1, true, 0],[null, , true, 14],[false, null, undefined], [undefined]];
+    var trueIndex = [];
+    arrayFunctions.findIndex(arr, (item, idx) => {
+      for (var idx = 0; idx < arr.length; idx++) {
+        if (arr[idx] !== true){
+          trueIndex[idx] = -1;
+        } else {
           for (var j = 0; j < arr[idx].length; j++) {
             if(arr[idx][j] == true) {
               trueIndex[idx] = j;
               idx++;
-              console.log('1.5: ', arr[idx][j], idx, j);
-              // if(arr[idx][j].hasOwnProperty(idx)){
-              //   console.log('2: ',arr[idx][j]);
-              if(arr[idx][j] == true){
-                idx++;
-                return trueIndex = arr[idx][j]+' ['+idx+']['+j+']';
-                // idx++;
-                // console.log(trueIndex);
-              }
             } else {
-              trueIndex[idx] = j;
-              // idx++;
-              // console.log(trueIndex);
+              trueIndex[idx] = -1;
             }
           }
         }
-      });
-      console.log('final: ',trueIndex);
+      }
       assert.deepEqual(trueIndex, [0, 2, -1, -1])
+    });
   });
 });
-// });
