@@ -1,7 +1,3 @@
-// Implement select array methods from scratch. Only use:
-// * `array.length`
-// * `array[i] = value`
-// * `value = array[i]`
 const assert = require('assert');
 const arrayFunctions = require ('../src/array-methods');
 
@@ -45,21 +41,18 @@ describe('array library', () => {
     const arr = [[1, true, 0],[null, , true, 14],[false, null, undefined], [undefined]];
     var trueIndex = [];
     arrayFunctions.findIndex(arr, (item, idx) => {
-      for (var idx = 0; idx < arr.length; idx++) {
-        if (arr[idx] !== true){
-          trueIndex[idx] = -1;
-        } else {
-          for (var j = 0; j < arr[idx].length; j++) {
-            if(arr[idx][j] == true) {
-              trueIndex[idx] = j;
-              idx++;
-            } else {
-              trueIndex[idx] = -1;
-            }
+      for (idx = 0; idx < arr.length; idx++) {
+        for (var j = 0; j < arr[idx].length; j++) {
+          var tOrF = arr[idx][j] ? true : false;
+          if(tOrF === true) {
+            trueIndex[idx] = j;
+            idx++; j = -1;
+          } else if (tOrF === false && j <= arr[idx].length){
+            trueIndex[idx] = -1;
           }
         }
       }
-      assert.deepEqual(trueIndex, [0, 2, -1, -1])
+      assert.deepEqual(trueIndex, [0, 2, -1, -1]);
     });
   });
 });
