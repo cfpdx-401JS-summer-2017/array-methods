@@ -3,10 +3,10 @@ const map = require('../src/map');
 
 describe('map function', () => {
     it('does map', () => {
-        const testArray = [2,4,6,8];
-        const testCallback = function(x) {
+        const array = [2,4,6,8];
+        const fn = function(x) {
             return(x * 2);
         };
-        assert.deepEqual([4,8,12,16], map(testArray, testCallback));
+        assert.deepEqual([4,8,12,16], map(array, fn));
     });
 });
