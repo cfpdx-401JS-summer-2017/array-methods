@@ -15,6 +15,12 @@ describe('array library', () => {
         assert.deepEqual(mappedArray, [2, 4, 6]);
     });
 
+    it('map indexes', () => {
+        const array = ['a', 'b', 'c'];
+        const indexes = [];
+        methods.map(array, (x, i) => indexes.push(i));
+        assert.deepEqual(indexes, [0, 1, 2]);
+    });
 
 
     // // filter
