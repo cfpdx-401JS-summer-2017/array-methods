@@ -15,11 +15,15 @@ describe('array library', () => {
         assert.deepEqual(mappedArray, [2, 4, 6]);
     });
 
-    it('map indexes', () => {
+    function testIndex(fnToTest) {
         const array = ['a', 'b', 'c'];
         const indexes = [];
-        methods.map(array, (x, i) => indexes.push(i));
+        fnToTest(array, (x, i) => indexes.push(i));
         assert.deepEqual(indexes, [0, 1, 2]);
+    }
+
+    it('map indexes', () => {
+        testIndex(methods.map);
     });
     
     it('filter', () => {
@@ -27,6 +31,7 @@ describe('array library', () => {
         const tens = methods.filter(array, x => x%10 === 0);
         assert.deepEqual(tens, [10, 20]);
     });
+
 
 
 
