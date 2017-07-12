@@ -46,7 +46,20 @@ methods.findindex = (array, callback) => {
         }
     }
     // console.log('results array', found);
-    const result = found.length === 0 ? -1 : found[0]; 
+    const result = found.length === 0 ? -1 : found[0];
+    // console.log('result', result);
+    return result;
+};
+
+methods.every = (array, callback) => {
+    const matches = [];
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i], i)) {
+            matches.push(i);
+        }
+    }
+    // console.log('matches array', matches);
+    const result = matches.length === array.length ? true : false;
     // console.log('result', result);
     return result;
 };

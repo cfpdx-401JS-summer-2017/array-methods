@@ -53,4 +53,16 @@ describe('array library', () => {
         const found = methods.findindex(array, (found, index) => array[index] === 'fo');
         assert.deepEqual(found, -1);
     });
+
+    it('every returns false', () => {
+        const array = ['duck', 'duck', 'duck', 'goose'];
+        const allTheSame = methods.every(array, (isSame, index) => array[index] === 'duck');
+        assert.deepEqual(allTheSame, false);
+    });
+
+    it('every returns true', () => {
+        const array = ['duck', 'duck', 'duck'];
+        const allTheSame = methods.every(array, (isSame, index) => array[index] === 'duck');
+        assert.deepEqual(allTheSame, true);
+    });
 });
