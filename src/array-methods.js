@@ -38,4 +38,17 @@ methods.reduce = (array, callback, initValue) => {
     return accumulator;
 };
 
+methods.findindex = (array, callback) => {
+    const found = [];
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i], i)) {
+            found.push(i);
+        }
+    }
+    // console.log('results array', found);
+    const result = found.length === 0 ? -1 : found[0]; 
+    // console.log('result', result);
+    return result;
+};
+
 module.exports = methods;

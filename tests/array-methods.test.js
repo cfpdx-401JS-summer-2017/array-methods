@@ -42,5 +42,15 @@ describe('array library', () => {
         assert.equal(sum, 60);
     });
 
-    
+    it('find index', () => {
+        const array = ['fee','fie','foe','fum'];
+        const found = methods.findindex(array, (found, index) => array[index] === 'foe');
+        assert.deepEqual(found, 2);
+    });
+
+    it('find index not found', () => {
+        const array = ['fee','fie','foe','fum'];
+        const found = methods.findindex(array, (found, index) => array[index] === 'fo');
+        assert.deepEqual(found, -1);
+    });
 });
