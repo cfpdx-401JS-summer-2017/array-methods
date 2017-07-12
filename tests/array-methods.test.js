@@ -21,14 +21,15 @@ describe('array library', () => {
         methods.map(array, (x, i) => indexes.push(i));
         assert.deepEqual(indexes, [0, 1, 2]);
     });
+    
+    it('filter', () => {
+        const array = [1, 10, 2, 20];
+        const tens = methods.filter(array, x => x%10 === 0);
+        assert.deepEqual(tens, [10, 20]);
+    });
 
 
-    // // filter
-    // it('filters the array for numbers and returns the new length', () => {
-    //     const array = [1, 'a', 2, 'b'];
-    //     const index = methods.filter(array);
-    //     assert.equal(index, 2);
-    // });
+
     // reduce
     // it('reduces the array and returns sum', () => {
     //     const array = [1, 2, 3];
