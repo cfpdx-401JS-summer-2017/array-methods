@@ -2,22 +2,21 @@ const assert = require('assert');
 const methods = require('../src/array-methods');
 
 describe('array library', () => {
-    // for each
-    it('loops through the array and counts numbers', () => {
+    it('for each', () => {
         const array = [1, 2, 3];
         const newArray = [];
         methods.foreach(array, x => newArray.push(x));
         assert.deepEqual(newArray, array);
     });
-    // map
+    
+    it('map', () => {
+        const array = [1, 2, 3];
+        const mappedArray = methods.map(array, x => x * 2);
+        assert.deepEqual(mappedArray, [2, 4, 6]);
+    });
 
 
 
-    // it('maps the array to a new array and returns the new length', () => {
-    //     const array = [1, 2, 3];
-    //     const length = methods.map(array);
-    //     assert.equal(length, 3);
-    // });
     // // filter
     // it('filters the array for numbers and returns the new length', () => {
     //     const array = [1, 'a', 2, 'b'];

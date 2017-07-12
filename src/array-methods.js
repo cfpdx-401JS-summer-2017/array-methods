@@ -3,6 +3,13 @@ module.exports = {
         for (let i = 0; i < array.length; i++) {
             callback(array[i], i);
         }
+    },
+    map(array, callback) {
+        const mappedArray = [];
+        for (let i = 0; i < array.length; i++) {
+            mappedArray[i] = callback(array[i], i);
+        }
+        return mappedArray;
     }
 };
 
