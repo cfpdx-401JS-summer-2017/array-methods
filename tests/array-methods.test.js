@@ -32,6 +32,10 @@ describe('array library', () => {
         assert.deepEqual(tens, [10, 20]);
     });
 
+    it('filter indexes', () => {
+        testIndex(methods.filter);
+    });
+
 
 
 
