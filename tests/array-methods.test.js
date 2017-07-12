@@ -36,6 +36,11 @@ describe('array library', () => {
         testIndex(methods.filter);
     });
 
+    it('reduce', () => {
+        const array = [10, 20, 30];
+        const sum = methods.reduce(array, (total, x) => total + x, 0);
+        assert.equal(sum, 60);
+    });
 
 
 

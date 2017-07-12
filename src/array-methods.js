@@ -19,5 +19,18 @@ module.exports = {
             }
         }
         return filteredArray;
+    },
+    reduce(array, callback, initValue) {
+        // if initValue was not provided, then use the first item in the array to start totalling up
+        const noInit = initValue === undefined;
+        if(noInit) initValue = array[0];
+
+        let accumulator = initValue;
+        for (let i = 0; i < array.length; i++) {
+            if (callback(array[i], i)) {
+                accumulator = accumulator + array[i];
+            }
+        }
+        return accumulator;
     }
 };
