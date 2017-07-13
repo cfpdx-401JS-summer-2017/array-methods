@@ -1,45 +1,67 @@
 const methods = {};
-// push
-methods.push = function(array, item) {
-    array.push(item);
-    return array.length;
+
+methods.foreach = (array, callback) => {
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i], i);
+    }
 };
-// for each
-methods.foreach = function(array) {
-    const numbers = [];
-    for (var i = 0; i < array.length; i++) {
-        // console.log(Number.isInteger(array[i]));
-        if (Number.isInteger(array[i])) {
-            numbers.push(array[i]);
+
+methods.map = (array, callback) => {
+    const mappedArray = [];
+    for (let i = 0; i < array.length; i++) {
+        mappedArray[i] = callback(array[i], i);
+    }
+    return mappedArray;
+};
+
+methods.filter = (array, callback) => {
+    const filteredArray = [];
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i], i)) {
+            filteredArray[filteredArray.length] = array[i];
         }
     }
-    // console.log('count of numbers in array', numbers.length);
-    return numbers.length;
+    return filteredArray;
 };
 
-// map
-methods.map = function(array) {
-    const newArray = [];
-    for (var i = 0; i < array.length; i++) {
-        newArray[i] = array[i];
+methods.reduce = (array, callback, initValue) => {
+    // if initValue was not provided, then use the first item in the array to start totalling up
+    const noInit = initValue === undefined;
+    if(noInit) initValue = array[0];
+
+    let accumulator = initValue;
+    for (let i = 0; i < array.length; i++) {
+        if (callback(array[i], i)) {
+            accumulator = accumulator + array[i];
+        }
     }
-    // console.log(newArray);
-    return newArray.length;
+    return accumulator;
 };
-// filter
-methods.filter = function(array) {
-    const filteredArray = array.filter(function(item) {
-        return Number.isInteger(item);
-    });
-    return filteredArray.length;
-};
-// reduce
-// methods.f
-// find index
-// methods.reduce = function(array, item) {
-//     return array.findIndex(item); 
-// };
 
-// every
+methods.findindex = (array, callback) => {
+    const found = [];
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i], i)) {
+            found.push(i);
+        }
+    }
+    // console.log('results array', found);
+    const result = found.length === 0 ? -1 : found[0];
+    // console.log('result', result);
+    return result;
+};
+
+methods.every = (array, callback) => {
+    const matches = [];
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i], i)) {
+            matches.push(i);
+        }
+    }
+    // console.log('matches array', matches);
+    const result = matches.length === array.length ? true : false;
+    // console.log('result', result);
+    return result;
+};
 
 module.exports = methods;
