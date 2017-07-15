@@ -10,7 +10,7 @@ function map(arr, cb) {
   }
 }
 
-function filter(arr, cb){
+function filter(arr, cb) {
   for (var i = 0; i < arr.length; i++) {
     cb(arr[i], i);
   }
@@ -18,7 +18,7 @@ function filter(arr, cb){
 
 function reduce(arr, cb) {
   for (var i = 0; i < arr.length; i++) {
-    if(arr.hasOwnProperty(i)) {
+    if (arr.hasOwnProperty(i)) {
       cb(arr[i], i);
     }
   }
@@ -26,12 +26,11 @@ function reduce(arr, cb) {
 
 function findIndex(arr, cb) {
   for (var i = 0; i < arr.length; i++) {
-    if(arr.hasOwnProperty(i)) {
+    if (arr.hasOwnProperty(i)) {
       cb(arr[i], i);
     }
   }
 }
-
 
 module.exports = {
   forEach,
