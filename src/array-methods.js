@@ -41,4 +41,8 @@ arrayObj.findIndex = (arr, callback) => {
   return results;
 };
 
+arrayObj.every = (arr, callback) => {
+  
+};
+
 module.exports = arrayObj;

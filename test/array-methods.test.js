@@ -54,4 +54,10 @@ describe('array methods', () => {
     const foundIndex = arrayObj.findIndex( testArray, (item, index) => 743 );
     assert.equal(foundIndex, -1);
   });
+
+  it ('returns true if all items in the array meet the requirement of the callback, else it returns false', () => {
+    const testArray = [54, 15, 12, 6, 3];
+    const every = arrayObj.every( testArray, (item, index) => item % 3 === 0);
+    assert.equal(every, true);
+  });
 });
