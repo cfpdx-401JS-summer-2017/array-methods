@@ -20,8 +20,7 @@ describe('array methods', () => {
 
   it ('does something to each item in an array and returns a new array', () => {
     const testArray = [4,8,13];
-    const mappedArray = arrayObj.map(testArray, (item, index) => item + 3
-    );
+    const mappedArray = arrayObj.map(testArray, (item, index) => item + 3);
     assert.deepEqual(mappedArray, [7,11,16]);
   });
 
@@ -32,9 +31,15 @@ describe('array methods', () => {
     assert.deepEqual(filteredArray, [3,9,12]);
   });
 
-  // it ('accumulates all items in an array per the callback function and returns one value', () => {
-  //   const testArray = [3,1,5,12,15];
-  //   const reduced = arrayObj.reduce(testArray, () => {});
-  //   assert.equal(reduced, 36);
-  // });
+  it ('accumulates all items in an array per the callback function and returns one value', () => {
+    const testArray = [3,1,5,12,10];
+    const reduced = arrayObj.reduce(testArray, (accumulator, item, index) => {return item;}, 7 );
+    assert.equal(reduced, 38);
+  });
+
+  it ('accumulates all items in an array per the callback function and returns one value', () => {
+    const testArray = [3,1,5,12,10];
+    const reduced = arrayObj.reduce( testArray, (accumulator, item, index) => {return item;} );
+    assert.equal(reduced, 31);
+  });
 });

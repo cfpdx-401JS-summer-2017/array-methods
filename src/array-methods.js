@@ -24,6 +24,11 @@ arrayObj.filter = (arr, callback) => {
   return newArray;
 };
 
-arrayObj.reduce = () =>{};
+arrayObj.reduce = (arr, callback, initialValue = 0) => {
+  for (let i = 0; i < arr.length; i ++) {
+    initialValue += callback(initialValue = initialValue || (arr[0]), arr[i], i);
+  }
+  return initialValue;
+};
 
 module.exports = arrayObj;
