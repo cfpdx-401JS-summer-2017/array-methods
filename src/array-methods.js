@@ -32,7 +32,13 @@ arrayObj.reduce = (arr, callback, initialValue = 0) => {
 };
 
 arrayObj.findIndex = (arr, callback) => {
-  
+  let results = -1;
+  for (let i = 0; i < arr.length; i ++) {
+    if(arr[i] === callback()) {
+      results = i;
+    }
+  }
+  return results;
 };
 
 module.exports = arrayObj;

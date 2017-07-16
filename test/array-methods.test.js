@@ -45,7 +45,13 @@ describe('array methods', () => {
 
   it ('takes an argument and returns the index of that argument from the array it acts on', () => {
     const testArray = [16, 3, 24, 42, 375];
-    const foundIndex = arrayObj.findIndex( testArray, (item, index) => {});
+    const foundIndex = arrayObj.findIndex( testArray, (item, index) => 42 );
     assert.equal(foundIndex, 3);
+  });
+
+  it ('takes an argument and returns -1 if that item is not found in the array', () => {
+    const testArray = [16, 3, 24, 42, 375];
+    const foundIndex = arrayObj.findIndex( testArray, (item, index) => 743 );
+    assert.equal(foundIndex, -1);
   });
 });
