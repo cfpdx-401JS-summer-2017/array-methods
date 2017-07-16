@@ -31,4 +31,8 @@ arrayObj.reduce = (arr, callback, initialValue = 0) => {
   return initialValue;
 };
 
+arrayObj.findIndex = (arr, callback) => {
+  
+};
+
 module.exports = arrayObj;

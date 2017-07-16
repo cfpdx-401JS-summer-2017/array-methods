@@ -42,4 +42,10 @@ describe('array methods', () => {
     const reduced = arrayObj.reduce( testArray, (accumulator, item, index) => {return item;} );
     assert.equal(reduced, 31);
   });
+
+  it ('takes an argument and returns the index of that argument from the array it acts on', () => {
+    const testArray = [16, 3, 24, 42, 375];
+    const foundIndex = arrayObj.findIndex( testArray, (item, index) => {});
+    assert.equal(foundIndex, 3);
+  });
 });
