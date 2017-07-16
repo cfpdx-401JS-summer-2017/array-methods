@@ -42,7 +42,14 @@ arrayObj.findIndex = (arr, callback) => {
 };
 
 arrayObj.every = (arr, callback) => {
-  
+  let results = true;
+  for (let i = 0; i < arr.length; i ++) {
+    if (!callback(arr[i], i)) {
+      results = false;
+      break;
+    }
+  }
+  return results;
 };
 
 module.exports = arrayObj;
