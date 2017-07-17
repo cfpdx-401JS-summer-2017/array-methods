@@ -8,4 +8,5 @@ describe('creates new array from items that pass test in the callback', () => {
         const greaterThan = myFilter(testArray, x => x > 1);
         assert.deepEqual(greaterThan,[2,3]);
     });
+
 });
