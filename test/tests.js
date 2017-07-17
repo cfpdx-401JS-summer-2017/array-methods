@@ -61,8 +61,6 @@ describe('filter', () =>  {
     //filter as requested in the lab is merly a slightly different version of the map method.
     it('Creates a new array witholing elements that did not pass the test', () => {
         var words = ["spray", "limit", "elite", "exuberant", "destruction", "present"];
-        console.log('the words array starts as=', words);
-
         const filteredArr = arravy.filter(words, function(word,index){
             if(word.length > 6) return true
             else return false
@@ -72,46 +70,26 @@ describe('filter', () =>  {
     });
 });
 
-describe('reduce(array, callback [, initialValue])', () =>  {
-    it('applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.', () => {
+describe('reduce', () =>  {
+    it('applies a function against an accumulator and each element in the array to reduce it to a single value.', () => {
         const array = [1, 2, 3];
-        const sum = arravy.reduce(array, (total, x) => total + x, 0); 
-        // //function(int,index) {
-        //     multiplyer = int * 2;
-        //     newArray[index] = multiplyer
-
-
-        // });
+        const sum = arravy.reduce(array, (total, x) => total + x, 0);
         assert.deepEqual(sum,6);
 
     });
-    it('reduce no init value, passes index as 3d argument', ) 
-});
-
-describe('findIndex(array, callback)', () =>  {
-    it('returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.', () => {
+    it('reduce passes index as 3rd argument', () => {
         const array = [1, 2, 3];
-        const length = arravy.map(array, function(int,index) {
-            multiplyer = int * 2;
-            newArray[index] = multiplyer
-
-
-        });
-        assert.deepEqual(newArray,[2,4,6]);
-
+        const indexArr = [];
+        arravy.reduce(array, (x, y, i) => indexArr.push(i), 0);
+        assert.deepEqual(indexArr, [0, 1, 2]);
     });
-});
-
-describe('every(array, callback)', () =>  {
-    it('tests whether all elements in the array pass the test implemented by the provided function', () => {
+        
+    it('reduce no init value, passes index as third argument', () => {
         const array = [1, 2, 3];
-        const length = arravy.map(array, function(int,index) {
-            multiplyer = int * 2;
-            newArray[index] = multiplyer
-
-
-        });
-        assert.deepEqual(newArray,[2,4,6]);
-
-    });
+        const indexArr = [];
+        arravy.reduce(array, (x, y, i) => indexArr.push(i));
+        assert.deepEqual(indexArr, [1, 2]);
+    }) 
 });
+
+

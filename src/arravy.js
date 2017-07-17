@@ -1,4 +1,4 @@
-// function
+// functions
 
   function push(array, item) {
     array[array.length] = item;
@@ -22,38 +22,31 @@
   function filter(array, callback) {
     const filtered = [];
     for(let i = 0; i < array.length; i++) {
-        const item = array[i];
-        if(callback(item, i)) {
-            filtered[filtered.length] = item;
+        const arrayPice = array[i];
+        if(callback(arrayPice, i)) {
+            filtered[filtered.length] = arrayPice;
         }
     }
     return filtered;
 };
 
   function reduce(array, callback, initialValue) {
-    const noInit = initialValue === undefined;
-    if(noInit) initialValue = array[0];
+    const lostInit = initialValue === undefined;
+    if(lostInit) initialValue = array[0];
 
     let accumulator = initialValue;
-    for(let i = noInit ? 1 : 0; i < array.length; i++) {
+    for(let i = lostInit ? 1 : 0; i < array.length; i++) {
         accumulator = callback(accumulator, array[i], i);
-    }
+    };
     return accumulator;
-}
+};
 
-  // function findIndex(array, callback) {
-  //   array[array.length] = item;
-  //   return array.length;
-  // };
-
-  // function every(array, callback) {
-  //   array[array.length] = item;
-  //   return array.length;
-  // };
+  
 
 module.exports = {
     push, 
     forEach,
     map,
-    filter
+    filter,
+    reduce
 };
