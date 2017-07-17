@@ -48,6 +48,14 @@ function findIndex(array, callback) {
   };
 
   
+function every(array, callback) {
+    for(let i = 0; i < array.lenth; i++){
+        if (callback(array[i],i)!== true) {
+            return false;
+        }
+    }
+return true;
+};
 
 module.exports = {
     push, 
@@ -55,5 +63,6 @@ module.exports = {
     map,
     filter,
     reduce,
-    findIndex
+    findIndex,
+    every
 };

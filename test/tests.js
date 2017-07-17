@@ -102,3 +102,14 @@ describe('findIndex', () =>  {
 
     });
 });
+
+describe('every(array, callback)', () =>  {
+    it('tests whether all elements in the array pass the test implemented by the provided function', () => {
+        const array = [2, 4, 6, 8];
+        const checkedArr = arravy.every(array, function isEven(int) {
+            return int % 2 == 0;            
+        });
+        assert.deepEqual(checkedArr,true);
+
+    });
+});
