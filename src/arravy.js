@@ -41,6 +41,12 @@
     return accumulator;
 };
 
+function findIndex(array, callback) {
+    for(let i = 0; i < array.length; i++) {
+       if (callback(array[i],i) == true) return i;
+    }
+  };
+
   
 
 module.exports = {
@@ -48,5 +54,6 @@ module.exports = {
     forEach,
     map,
     filter,
-    reduce
+    reduce,
+    findIndex
 };

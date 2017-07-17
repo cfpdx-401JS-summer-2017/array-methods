@@ -92,4 +92,13 @@ describe('reduce', () =>  {
     }) 
 });
 
+describe('findIndex', () =>  {
+    it('returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.', () => {
+        const array = [1, 2, 3];
+        const match = arravy.findIndex(array, (int, index) => {
+            if (int === 2) return index;
+        });
+        assert.deepEqual(match,1);
 
+    });
+});
