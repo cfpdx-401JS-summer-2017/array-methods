@@ -1,9 +1,10 @@
-function myReduce(array,callback) {
-    const newArray = [];
-    for (let i = 0; i < array.length; i++) {
-        newArray[i] = callback(array[i]);
+function myReduce(array,callback, initialValue) {
+    let accumulator = initialValue || array[0];
+
+    for (let i = accumulator; i < array.length; i++) {
+        accumulator = callback(accumulator, array[i], i);
     }
-    return newArray;
+    return accumulator;
 }
 
 module.exports = myReduce;

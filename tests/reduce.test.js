@@ -25,11 +25,11 @@ const myReduce = require('../src/reduce');
 
 
 //class example
-// describe('array methods', () => {
-//     it ('reduce', () => {
-//         const array = [1,2,3];
-//         const sum = myReduce(array, (total, x) => total + x, 0);
-//         assert.deepEqual(sum, [6]);
+describe('array methods', () => {
+    it ('reduce', () => {
+        const array = [1,2,3];
+        const sum = myReduce(array, (total, x) => total + x, 0);
+        assert.deepEqual(sum, 6);
 
-//     });
-// });
+    });
+});
