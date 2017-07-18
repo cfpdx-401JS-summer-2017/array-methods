@@ -1,14 +1,14 @@
+//ADD INDEXES 
 
-//FINISH THIS ONE
 function findIndex(array, callback) {
-
+    let foundIndex = -1;
     for (let i = 0; i < array.length; i++) {
-        if (callback(array[i],i)) {
-            return array[i];
-        } else {
-            return -1;
+        if (callback(array[i])) {
+            foundIndex = i;
+            return foundIndex;
         }
     }
+    
 }
 
 module.exports = findIndex;

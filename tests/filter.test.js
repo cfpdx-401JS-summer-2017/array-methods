@@ -1,7 +1,7 @@
 const assert = require('assert');
 const myFilter = require('../src/filter');
 
-describe('creates new array from items that pass test in the callback', () => {
+describe('new filtered array', () => {
     it('filters array', () => {
         const testArray = [1,2,3];
 
