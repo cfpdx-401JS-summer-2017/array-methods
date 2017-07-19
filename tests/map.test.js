@@ -1,7 +1,7 @@
 const assert = require('assert');
 const map = require('../src/map');
 
-
+//ADD INDEX TEST TO ALL FUNCTIONS, ADD I 
 describe('array methods', () => {
     it('map', () => {
         const array = [1, 4, 6];

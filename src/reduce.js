@@ -1,7 +1,10 @@
 function myReduce(array,callback, initialValue) {
-    let accumulator = initialValue || array[0];
+    const noInitial = initialValue === undefined;
+    if(noInitial) initialValue = array[0];
 
-    for (let i = accumulator; i < array.length; i++) {
+    let accumulator = initialValue;
+
+    for (let i = noInitial ? 1 : 0; i < array.length; i++) {
         accumulator = callback(accumulator, array[i], i);
     }
     return accumulator;
