@@ -10,7 +10,7 @@ describe('array methods', () => {
         
     });
     
-    it('map passes index as second arg', () => {
+    it('map indexes', () => {
         const array = [1, 2, 3];
         const mapped = map(array, (x,i) => i);
         assert.deepEqual(mapped, [0,1,2]);

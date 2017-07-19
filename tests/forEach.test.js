@@ -10,12 +10,11 @@ describe('runs callback through each item in the array', () => {
         assert.deepEqual(called, array);
     });
 
-    it('forEach index as second arg', () => {
+    it('forEach indexes', () => {
         const testArray = [1,2,3];
         const indexes = [];
         forEach(testArray, (x,i) => indexes.push(i));
         assert.deepEqual(indexes, [0,1,2]);
-        
     });
 
 });
