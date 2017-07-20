@@ -21,15 +21,9 @@ function filter(arr) {
   return trueValue;
 }
 
-function reduce(arr, fn) {
-  const fibArray = 0;
-  const acc = 0;
-  for (var i = 1; i < arr.length; i++) {
-    fibArray[acc] = i;
-
-    console.log(fibArray);
-  }
-
+function reduce(arr, acc, fn) {
+  let fibArray = [];
+  fibArray = fn(arr);
   return fibArray;
 }
 

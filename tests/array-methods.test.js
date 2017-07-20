@@ -22,14 +22,21 @@ describe('array library', () => {
     assert.deepEqual(truthArray, [1, 'true', 3]);
   });
   it('builds fibonacci sequence array', () => {
-    const arr = [];
-    const acc = 0;
-    const fibonacci = function(item) {
-      return item;
+    const arr = [0, 0, 0, 0, 0, 0];
+    let acc = 1;
+    const fibonacci = function fib(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        arr[i] = acc;
+        if (i >= 1) {
+          acc = acc + arr[i - 1];
+        } else {
+          arr[i] = acc;
+        }
+      }
+      return arr;
     };
-
-    const fibonacciArr = arrayFunctions.reduce(arr, fibonacci, () => {});
-    // assert.deepEqual(fibonacciArr, [1, 1, 3, 5, 8, 13]);
+    const fibonacciArr = arrayFunctions.reduce(arr, acc, fibonacci, () => {});
+    assert.deepEqual(fibonacciArr, [1, 1, 2, 3, 5, 8]);
   });
   it('finds index of first array item that\'s truthy', () => {
     const arr = [[1, true, 0], [null, , true, 14], [false, null, undefined], [undefined]];
