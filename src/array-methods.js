@@ -1,7 +1,10 @@
 function forEach(arr) {
-  // return forEachArray;
+  const eachArray = [];
+  for (var i = 0; i < arr.length; i++) {
+    eachArray[i] = arr[i];
+  }
+  return eachArray;
 }
-// all these need for loops on arrays and no callbacks -
 
 function map(arr, fn) {
   const mapped = [];
@@ -27,18 +30,27 @@ function reduce(arr, acc, fn) {
   return fibArray;
 }
 
-function findIndex(arr) {
+function findIndex(arr, fn) {
+  let indexOfTrue = [];
+  indexOfTrue = fn(arr);
+  return indexOfTrue;
+}
+
+function every(arr, fn) {
+  let truthFlag = true;
   for (var i = 0; i < arr.length; i++) {
-    if (arr.hasOwnProperty(i)) {
-      return;
+    if (Boolean(arr[i]) === false) {
+      truthFlag = false;
     }
   }
+  return truthFlag;
 }
 
 module.exports = {
-  // forEach,
+  forEach,
   map,
   filter,
   reduce,
-  findIndex
+  findIndex,
+  every
 };
