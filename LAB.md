@@ -16,7 +16,8 @@ For example, `push` might look like:
 
 ```js
 // tests
-describe('push', () =>
+// the example was missing a top bracket
+describe('push', () => {
     it('adds and returns new length', () => {
         const array = [1, 2, 3];
         const length = push(array, 4);

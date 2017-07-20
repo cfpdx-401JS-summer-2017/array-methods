@@ -1,0 +1,26 @@
+{
+  "name": "array-methods",
+  "version": "1.0.0",
+  "description": "A similar attempt to the Calculator app but with jsmethods",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "start": "npm test -- -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomson42/array-methods.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomson42/array-methods/issues"
+  },
+  "homepage": "https://github.com/Thomson42/array-methods#readme",
+  "dependencies": {
+    "mocha": "^3.4.2"
+  }
+}
