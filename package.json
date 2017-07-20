@@ -5,7 +5,7 @@
   "main": "src/array-methods.js",
   "scripts": {
     "test": "mocha tests",
-    "start" : "npm test -- -w"
+    "start": "npm test -- -w"
   },
   "repository": {
     "type": "git",

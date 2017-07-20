@@ -1,42 +1,56 @@
-function forEach(arr, cb) {
+function forEach(arr) {
+  const eachArray = [];
   for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
+    eachArray[i] = arr[i];
   }
+  return eachArray;
 }
 
-function map(arr, cb) {
+function map(arr, fn) {
+  const mapped = [];
   for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
+    mapped[i] = fn(arr[i]);
   }
+  return mapped;
 }
 
-function filter(arr, cb){
+function filter(arr) {
+  const trueValue = [];
   for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
-  }
-}
-
-function reduce(arr, cb) {
-  for (var i = 0; i < arr.length; i++) {
-    if(arr.hasOwnProperty(i)) {
-      cb(arr[i], i);
+    if (Boolean(arr[i]) === true) {
+      trueValue.push(arr[i]);
     }
   }
+  return trueValue;
 }
 
-function findIndex(arr, cb) {
+function reduce(arr, acc, fn) {
+  let fibArray = [];
+  fibArray = fn(arr);
+  return fibArray;
+}
+
+function findIndex(arr, fn) {
+  let indexOfTrue = [];
+  indexOfTrue = fn(arr);
+  return indexOfTrue;
+}
+
+function every(arr, fn) {
+  let truthFlag = true;
   for (var i = 0; i < arr.length; i++) {
-    if(arr.hasOwnProperty(i)) {
-      cb(arr[i], i);
+    if (Boolean(arr[i]) === false) {
+      truthFlag = false;
     }
   }
+  return truthFlag;
 }
-
 
 module.exports = {
   forEach,
   map,
   filter,
   reduce,
-  findIndex
+  findIndex,
+  every
 };
