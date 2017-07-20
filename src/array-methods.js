@@ -1,39 +1,48 @@
-function forEach(arr, cb) {
+function forEach(arr) {
+  // return forEachArray;
+}
+// all these need for loops on arrays and no callbacks -
+
+function map(arr, fn) {
+  const mapped = [];
   for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
+    mapped[i] = fn(arr[i]);
   }
+  return mapped;
 }
 
-function map(arr, cb) {
+function filter(arr) {
+  const trueValue = [];
   for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
-  }
-}
-
-function filter(arr, cb) {
-  for (var i = 0; i < arr.length; i++) {
-    cb(arr[i], i);
-  }
-}
-
-function reduce(arr, cb) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr.hasOwnProperty(i)) {
-      cb(arr[i], i);
+    if (Boolean(arr[i]) === true) {
+      trueValue.push(arr[i]);
     }
   }
+  return trueValue;
 }
 
-function findIndex(arr, cb) {
+function reduce(arr, fn) {
+  const fibArray = 0;
+  const acc = 0;
+  for (var i = 1; i < arr.length; i++) {
+    fibArray[acc] = i;
+
+    console.log(fibArray);
+  }
+
+  return fibArray;
+}
+
+function findIndex(arr) {
   for (var i = 0; i < arr.length; i++) {
     if (arr.hasOwnProperty(i)) {
-      cb(arr[i], i);
+      return;
     }
   }
 }
 
 module.exports = {
-  forEach,
+  // forEach,
   map,
   filter,
   reduce,
