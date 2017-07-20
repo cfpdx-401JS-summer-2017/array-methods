@@ -12,6 +12,6 @@ describe('find index', () => {
         const array = [1, 2, 3];
         const indexes = [];
         findIndex(array, (item,i) => indexes.push(i));
-        assert.deepEqual(indexes, [0]);
+        assert.deepEqual(indexes, [0,1,2]);
     });
 });

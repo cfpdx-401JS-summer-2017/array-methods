@@ -1,14 +1,13 @@
-
 function everyItem(array, callback) {
+    let returnedVal = true;
     for (let i = 0; i < array.length; i++) {
         const item = array[i];
-        if (callback(item, i)) {
-            //fix this
-        } else {
-            return false;
+        if (!callback(item, i)) {
+            returnedVal = false;
+            break;
         }
     }
-    return true;
+    return returnedVal;
 }
 
 
