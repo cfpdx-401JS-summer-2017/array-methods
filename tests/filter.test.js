@@ -1,15 +1,19 @@
 const assert = require('assert');
 const myFilter = require('../src/filter');
 
-describe('creates new array from items that pass test in the callback', () => {
-    it('creates new array from items that pass test in the callback', () => {
+describe('new filtered array', () => {
+    it('filters array', () => {
         const testArray = [1,2,3];
 
-        function testCallback(item) {
-            return item >= 0;
-        }
+        const greaterThan = myFilter(testArray, x => x > 1);
+        assert.deepEqual(greaterThan,[2,3]);
+    });
 
-        myFilter(testArray, testCallback);
-        assert.deepEqual(myFilter,[]);
+    it('returns indexes', () => {
+        const testArray = [1,2,3];
+        const indexes = [];
+
+        myFilter(testArray, (item, i) => indexes.push(i));
+        assert.deepEqual(indexes, [0,1,2]);
     });
 });

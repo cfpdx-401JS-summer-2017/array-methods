@@ -1,9 +1,13 @@
 function myFilter(array,callback) {
-    const newArray = [];
+    const filteredArray = [];
     for (let i = 0; i < array.length; i++) {
-        newArray[i] = callback(array[i]);
+        const item = array[i];
+        
+        if(callback(item, i)) {
+            filteredArray[filteredArray.length] = item;
+        }
     }
-    return newArray;
+    return filteredArray;
 }
 
 module.exports = myFilter;

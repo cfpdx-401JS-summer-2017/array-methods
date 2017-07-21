@@ -1,19 +1,18 @@
 const assert = require('assert');
 const everyItem = require('../src/every');
 
-describe('returns true if all items in array pass callback test', () => {
-    it('returns true if all items in array pass callback test', () => {
+describe('returns true if every item passes', () => {
+    it('every item', () => {
         const testArray = [1, 2, 3];
 
-        function testCallback(item) {
-            if (item > 0) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-        everyItem(testArray, testCallback);
-        assert.deepEqual(everyItem, []);
+        const allItems = everyItem(testArray, x => x > 2);
+        assert.deepEqual(allItems, false);
+    });
+
+    it('forEach indexes', () => {
+        const testArray = [1,2,3];
+        const indexes = [];
+        everyItem(testArray, (x,i) => indexes.push(i));
+        assert.deepEqual(indexes, [0,1,2]);
     });
 });

@@ -1,15 +1,11 @@
 const assert = require('assert');
 const findIndex = require('../src/findIndex');
 
-describe('returns index of element in array that passes callback test', () => {
-    it('returns index of element in array that passes callback test', () => {
-        const testArray = [1,2,3];
-
-        function testCallback(item) {
-            return item > 2;
-        }
-
-        findIndex(testArray, testCallback);
-        assert.deepEqual(findIndex,[]);
+describe('find index', () => {
+    it('returns the index of passed element', () => {
+        const testArray = [5, 10, 20];
+        const found = findIndex(testArray, x => x > 5);
+        assert.equal(found, 1);
     });
+
 });

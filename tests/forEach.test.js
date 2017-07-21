@@ -1,20 +1,20 @@
 const assert = require('assert');
 const forEach = require('../src/forEach');
 
-describe('runs a callback through each item in the array', () => {
-    it('runs callback through each item in array', () => {
-        const testArray = [1,2,3];
-        const newArray = [];
-        function testCallback(item, index) {
-            newArray.push({item,index});
-        }
+describe('runs callback through each item in the array', () => {
 
-        forEach(testArray, testCallback);
-        assert.deepEqual(newArray,[
-            {index: 0, item: 1}, 
-            {index:1, item:2}, 
-            {index:2, item:3}
-        ]);
+    it('runs callback through each item in the array', () => {
+        const array = [1, 2, 3];
+        const called = [];
+        forEach(array, x => called.push(x));
+        assert.deepEqual(called, array);
+    });
+
+    it('forEach indexes', () => {
+        const testArray = [1,2,3];
+        const indexes = [];
+        forEach(testArray, (x,i) => indexes.push(i));
+        assert.deepEqual(indexes, [0,1,2]);
     });
 
 });

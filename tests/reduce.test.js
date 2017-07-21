@@ -2,20 +2,17 @@ const assert = require('assert');
 const myReduce = require('../src/reduce');
 
 describe('applies accumulator to each index and reduces to single value', () => {
-    it('applies accumulator to each index and reduces to single value', () => {
+    it ('reduce to single value', () => {
+        const array = [1,2,3];
+        const sum = myReduce(array, (total, x) => total + x, 0);
+        assert.deepEqual(sum, 6);
+    });
+
+    it('returns indexes', () => {
         const testArray = [1,2,3];
+        const indexes = [];
 
-        function testCallback(item, accumulator) {
-            accumulator = 0;
-            for (let i = 0; i < testArray.length; i++) {
-                item = testArray[i+1];
-                let reduceValue = testArray[i] += item;
-                accumulator += reduceValue;
-            }
-            return accumulator;
-        }
-
-        myReduce(testArray, testCallback);
-        assert.deepEqual(myReduce, []);
+        myReduce(testArray, (item,val, i) => indexes.push(i),0);
+        assert.deepEqual(indexes, [0,1,2]);
     });
 });

@@ -1,9 +1,12 @@
-function findIndex(array,callback) {
-    const newArray = [];
+function findIndex(array, callback) {
+    let foundIndex = -1;
     for (let i = 0; i < array.length; i++) {
-        newArray[i] = callback(array[i]);
+        if (callback(array[i], i)) {
+            foundIndex = i;
+            return foundIndex;
+        }
     }
-    return newArray;
+
 }
 
 module.exports = findIndex;
