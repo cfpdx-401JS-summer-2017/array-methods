@@ -11,6 +11,15 @@ describe('array methods', () => {
         assert.deepEqual(second, [1, 3, 5]);
     });
 
+    it('forEach Part Two: The Reckoning', () => {
+        const somethingFun = [1, 4, 6];
+        const doubleTheFun = [];
+        array.forEach(somethingFun, (item, index) => {
+            doubleTheFun[index] = item*2;
+        });
+        assert.deepEqual(doubleTheFun, [2,8,12]);
+    });
+
     it('map', () => {
         const testArray = [1,3,5];
         const second = array.map(testArray, (item, index) => {
