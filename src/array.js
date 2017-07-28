@@ -1,18 +1,29 @@
 function forEach(array, callback) {
-    for (var i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         callback(array[i], i);
     }
 }
 
 function map(array, callback) {
-    var second = [];
-    for (var i = 0; i < array.length; i++) {
+    let second = [];
+    for (let i = 0; i < array.length; i++) {
         second.push(callback(array[i], i));
+    }
+    return second;
+}
+
+function filter(array, callback) {
+    let second = [];
+    for (let i = 0; i < array.length; i++) {
+        if(callback(array[i])){
+            second[second.length] = array[i];
+        }
     }
     return second;
 }
 
 module.exports = {
     forEach,
-    map
+    map,
+    filter
 };
