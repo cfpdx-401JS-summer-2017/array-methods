@@ -64,29 +64,14 @@ describe('array methods', () => {
     });
 
     it('every is false', () => {
-        const testArray = [1,3,5];
+        const testArrayFalse = [1,3,5];
+        const testArrayTrue = [3,5,9];
         function overTwo(item, index) {
-            if(item < 2) {
-                return false;
-            } else {
-                return true;
-            }
+            return item >= 2;
         }
-        const overTest = array.every(testArray, overTwo);
-        assert.deepEqual(overTest, false);
+        const overTestFalse = array.every(testArrayFalse, overTwo);
+        const overTestTrue = array.every(testArrayTrue, overTwo);
+        assert.deepEqual(overTestFalse, false);
+        assert.deepEqual(overTestTrue, true);
     });
-
-    it('every is true', () => {
-        const testArray = [3,5,9];
-        function overTwo(item, index) {
-            if(item < 2) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-        const overTest = array.every(testArray, overTwo);
-        assert.deepEqual(overTest, true);
-    });
-
 });
