@@ -63,4 +63,30 @@ describe('array methods', () => {
         assert.deepEqual(found, 1);
     });
 
+    it('every is false', () => {
+        const testArray = [1,3,5];
+        function overTwo(item, index) {
+            if(item < 2) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        const overTest = array.every(testArray, overTwo);
+        assert.deepEqual(overTest, false);
+    });
+
+    it('every is true', () => {
+        const testArray = [3,5,9];
+        function overTwo(item, index) {
+            if(item < 2) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        const overTest = array.every(testArray, overTwo);
+        assert.deepEqual(overTest, true);
+    });
+
 });

@@ -45,10 +45,22 @@ function findIndex(array, callback) {
     }
 }
 
+function every(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] !== undefined) {
+            if(!callback(array[i], i)) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 module.exports = {
     forEach,
     map,
     filter,
     reduce,
-    findIndex
+    findIndex,
+    every
 };
