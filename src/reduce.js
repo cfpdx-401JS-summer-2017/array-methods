@@ -1,19 +1,25 @@
-var accumulator = 0;
 
-function reduce(array, callback) {
+function reduce(array, callback, initialValue) {
+    var accumulator;
+    var item;
+    var index = 0;
 
-
-
-    for (i = 0; i < array.length; i++) {
-        var item = array[i];
-        var index = i;
-
+    if (!initialValue) {
+        accumulator = array[0];
+        index = 1;
+    } else {
+        accumulator = initialValue;
+        index = 0;
     }
 
-    callback(accumulator, item, index);
 
-    console.log(index);
-
+    for (var i = index; i < array.length; i++) {
+        if(array.hasOwnProperty(i)) {
+            item = array[i];
+            accumulator = callback(accumulator, item, index);
+        }
+    }
+    return accumulator;
 }
 
 

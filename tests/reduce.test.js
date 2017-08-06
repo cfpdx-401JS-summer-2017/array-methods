@@ -3,17 +3,39 @@ const assert = require('assert');
 
 describe('reduce', () => {
 
-    it('adds successive array items to previous accumulated sum', () => {
+    it('successfully sums successive array items WITHOUT optional initial value', () => {
+        
         const array = [1, 2, 3];
 
-        var callback = (accumulator, item, index) => {
-            console.log(accumulator);
-            return accumulator = accumulator + item;
-        };
+        function sum(accumulator, item, index) {
+            return accumulator + item;
+        }
 
+        const total = reduce(array, sum);
+        assert.equal(total, 6);
+    });
 
+    it('successfully sums successive array items WITH optional initial value', () => {
+        
+        const array = [1, 2, 3];
 
-        reduce(array, callback);
-        assert.equal(reduce.accumulator, 6);
+        function sum(accumulator, item, index) {
+            return accumulator + item;
+        }
+
+        const total = reduce(array, sum, 10);
+        assert.equal(total, 16);
+    });
+
+    it('sums successive array items while skipping array holes', () => {
+        
+        const array = [5,,6, 7];
+
+        function sum(accumulator, item, index) {
+            return accumulator + item;
+        }
+
+        const total = reduce(array, sum);
+        assert.equal(total, 18);
     });
 });
