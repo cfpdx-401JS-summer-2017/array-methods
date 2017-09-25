@@ -1,4 +1,4 @@
-const findIndex = require('../src/findIndex');
+const findIndex = require('../src/findindex');
 const assert = require('assert');
 
 describe('findIndex', () => {
