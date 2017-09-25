@@ -1,11 +1,17 @@
 function map(array, callback) {
+    var newArray = [];
 
-    for (i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         var item = array[i];
         var index = i;
 
-        callback(item, index);
+        if(array.hasOwnProperty(index)) {
+            newArray[index] = callback(item, index);
+        } else {
+            newArray[index] = item;
+        }        
     }
+    return newArray;
 }
 
 module.exports = map;
