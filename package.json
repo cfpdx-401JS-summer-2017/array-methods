@@ -1,10 +1,10 @@
 {
   "name": "array-methods",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "main": "index.js",
   "scripts": {
-    "test": "src/array.js"
+    "test": "mocha tests",
+    "start": "npm run test -- -w"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,12 @@
   "devDependencies": {
     "eslint": "^4.2.0",
     "mocha": "^3.4.2"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "description": ""
 }
