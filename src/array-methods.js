@@ -1,24 +1,27 @@
-function forEach(arr) {
+function forEach(arr, checkForHoles) {
   const eachArray = [];
   for (var i = 0; i < arr.length; i++) {
-    eachArray[i] = arr[i];
+    const tmp = checkForHoles(arr, arr[i], i);
+    eachArray[i] = tmp[0];
   }
   return eachArray;
 }
 
-function map(arr, fn) {
+function map(arr, checkForHoles) {
   const mapped = [];
   for (var i = 0; i < arr.length; i++) {
-    mapped[i] = fn(arr[i]);
+    const tmp = checkForHoles(arr, arr[i], i);
+    mapped[i] = tmp[0] + 3;
   }
   return mapped;
 }
 
-function filter(arr) {
+function filter(arr, checkForHoles) {
   const trueValue = [];
   for (var i = 0; i < arr.length; i++) {
-    if (Boolean(arr[i]) === true) {
-      trueValue.push(arr[i]);
+    const tmp = checkForHoles(arr, arr[i], i);
+    if (Boolean(tmp[0]) === true) {
+      trueValue.push(tmp[0]);
     }
   }
   return trueValue;
@@ -30,20 +33,23 @@ function reduce(arr, acc, fn) {
   return fibArray;
 }
 
-function findIndex(arr, fn) {
+function findIndex(arr, checkForHoles) {
   let indexOfTrue = [];
-  indexOfTrue = fn(arr);
-  return indexOfTrue;
+  for (var i = 0; i < arr.length; i++) {
+    const tmp = checkForHoles(arr, arr[i], i);
+    indexOfTrue[i] = tmp[0];
+    if (indexOfTrue[i] === true) return i;
+  }
+  return -1;
 }
 
-function every(arr, fn) {
-  let truthFlag = true;
+function every(arr) {
   for (var i = 0; i < arr.length; i++) {
     if (Boolean(arr[i]) === false) {
-      truthFlag = false;
+      return false;
     }
   }
-  return truthFlag;
+  return true;
 }
 
 module.exports = {
