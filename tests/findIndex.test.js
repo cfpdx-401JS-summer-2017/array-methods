@@ -13,6 +13,6 @@ describe('findIndex library', () => {
             }
         } 
         assert.equal(findIndex(array, yummyTaco), 0);
-        assert.equal(findIndex([0, 1, 2], yummyTaco), -1);
+        assert.equal(findIndex([0, 1, 2], yummyTaco), undefined);
     });
 });
